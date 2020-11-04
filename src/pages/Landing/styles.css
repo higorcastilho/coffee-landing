@@ -1,0 +1,61 @@
+@keyframes colorCycle {
+  0% {
+    filter: brightness(0);
+  }
+  11% {
+    filter: none;
+  }
+  33% {
+    filter: none;
+  }
+  55% {
+    filter: brightness(0);
+  }
+}
+main {
+  display: grid;
+}
+
+h1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 11.8rem;
+  letter-spacing: -1rem;
+  color: var(--white);
+}
+h1 span {
+  filter: brightness(0);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorCycle 9.9s ease-in-out infinite;
+}
+h1 span:nth-child(1) {
+  background-image: linear-gradient(90deg, #007CF0, #00DFD8);
+}
+h1 span:nth-child(2) {
+  background-image: linear-gradient(90deg, #7928CA, #FF0080);
+  animation-delay: 3.33s;
+}
+h1 span:nth-child(3) {
+  background-image: linear-gradient(90deg, #FF4D4D, #F9CB28);
+  animation-delay: 6.66s;
+}
+
+.hero_image {
+  width: 380px;
+  height: 380px;
+  background-image: url('../../assets/images/whey_coffee.png');
+  background-size: cover;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    grid-template-columns: repeat(2, max-content);
+    grid-template-rows: 1fr;
+    row-gap: 0;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
