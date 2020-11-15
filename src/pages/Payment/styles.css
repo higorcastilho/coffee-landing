@@ -1,0 +1,72 @@
+.payment_page {
+	overflow-x: hidden;
+}
+
+.payment_page h1 {
+	font-size: 2rem;
+	font: 2rem Inter, sans-serif;
+	padding: 2rem 2rem;
+	letter-spacing: 0;
+	color: var(--grey);
+	margin-top: 3.5rem;
+}
+
+h2, p {
+	margin: 2rem 2rem;
+	font-weight: bold;
+}
+
+p {
+	font-size: 1.2rem;
+}
+
+fieldset {
+	border: none;
+	height: 35rem;
+	padding: 1rem .1rem;
+	margin: 0 2rem;
+	box-shadow: 0 0 .7rem #949494;
+}
+
+form fieldset > input {
+	display: block;
+	height: 5.5rem;
+	width: 90%;
+	margin: 0 auto;
+	margin-top: .4rem;
+	border: .1rem solid #d3d3d3;
+	border-radius: .5rem;
+	padding: 0 1.1rem;
+}
+
+form fieldset section {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 5rem;
+	margin-top: .5rem;
+}
+
+form fieldset section input {
+	width: 43%;
+	height: 5.5rem;
+	border: .1rem solid #d3d3d3;
+	padding: 0 1.1rem;
+	border-radius: .5rem;
+}
+
+form fieldset section input:first-child {
+	margin-right: 1.4rem;
+}
+
+.product-review {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.product-review img {
+	width: 14rem;
+	margin-top: 5rem;
+}

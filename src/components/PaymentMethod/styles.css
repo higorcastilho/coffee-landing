@@ -1,0 +1,30 @@
+.payment_method {
+	display: block;
+	width: 90%;
+	padding: 1rem;
+	
+	margin: 2rem auto;
+	box-shadow: 0 0 .7rem #949494;
+}
+
+.payment_method button {
+
+	display: block;
+	border-radius: .5rem;
+	color: white;
+	background: white;
+	border-radius: .5rem;
+	text-align: center;
+	text-decoration: none;
+	font-size: 1.8rem;
+	border: none;
+	outline: none;
+}
+
+.payment_method img {
+	display: block;
+	width: 50%;
+	margin: 0 auto;
+	height: 4rem;
+}
+

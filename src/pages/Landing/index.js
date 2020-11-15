@@ -1,25 +1,17 @@
 import React from 'react'
 
-import Button from '../../components/Button'
+import MainSection from '../MainSection'
+import ProductDetailsSection from '../ProductDetailsSection'
+import SecuritySection from '../SecuritySection'
 
 import './styles.css'
-
+//Agora seu café também é fonte de proteínas
 function Landing() {
 	return (
-		<div>
-			<main>
-				<section>
-					<h1>
-						<span>Leve.</span>	
-						<span>Cremoso.</span>	
-						<span>Saudável.</span>	
-					</h1>
-					<Button route="/payment" name="Fazer pedido"/>
-				</section>
-				<section class="hero_image">
-					
-				</section>
-			</main>
+		<div id="landing">
+			<MainSection />
+			<ProductDetailsSection />
+			<SecuritySection />
 		</div>
 	)
 }
