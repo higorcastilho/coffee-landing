@@ -4,3 +4,32 @@
 	background: linear-gradient(90deg, #007CF0, #00DFD8);
 }
 
+#product-details-section {
+	display: grid;
+}
+
+#product-details-section > main > h1 {
+	font-size: 3rem;
+	margin-top: 3rem;
+	letter-spacing: -.2rem;
+	text-align: center;
+}
+
+#product-details-section > main > section {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	margin-top: 3rem;
+}
+
+#product-details-section > main > section > img {
+	width: 5rem;
+}
+
+#product-details-section > main > p {
+	font-size: 1.8rem;
+	color: white;
+	margin-top: 3rem;
+	text-align: center;
+}
+

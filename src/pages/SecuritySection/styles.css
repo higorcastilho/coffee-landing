@@ -1,6 +1,8 @@
 #security-section {
 	height: 100vh;
 	width: 100vw;
+	background: linear-gradient(90deg, #007CF0, #00DFD8);
+	color: white;
 }
 
 
@@ -8,7 +10,6 @@
 	font: 2.6rem sans-serif;
 	padding: 2rem 0rem;
 	letter-spacing: 0;
-	color: var(--gray);
 	margin-top: 2rem;
 	font-weight: bold;
 }
@@ -17,13 +18,11 @@
 	display: inline;
 	font: 2.3rem sans-serif;
 	margin-left: 1rem;
-	color: var(--gray);
 	font-weight: bold;
 }
 
 #security-section main p {
 	font: 1.8rem sans-serif;
-	color: var(--gray);
 }
 
 #security-section img {
