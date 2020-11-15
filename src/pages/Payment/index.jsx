@@ -10,15 +10,13 @@ import PagseguroLogo from '../../assets/images/pagseguro_logo.svg'
 import MercadoPagoLogo from '../../assets/images/mercado_pago_logo.svg'
 import StripeLogo from '../../assets/images/stripe_logo.svg'
 
-import WheyCoffee from '../../assets/images/whey_coffee.png'
-
 import './styles.css'
 
 function Payment() {
 
 	const [paymentMethod, setPaymentMethod] = useState('paypal')
 	
-	const [productDetails, setProductDetails] = useState({
+	const [productDetails] = useState({
 		image: "https://www.corpoevidashop.com.br/images/products/full/f1211-whey-protein-coffee-gourmet-700g-performance-nutrition.1593539033.jpg",
 		name: "Whey Coffee",
 		price: 20,
@@ -54,6 +52,8 @@ function Payment() {
 		switch(paymentMethod) {
 			case ('stripe'):
 				return stripe()
+			default:
+				return true
 			//case ('paypal'):
 			//	return paypal()
 			//case ('pagseguro'):

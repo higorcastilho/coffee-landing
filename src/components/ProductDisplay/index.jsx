@@ -6,7 +6,7 @@ const ProductDisplay = ({ handleClick, image, name, price, quantity, paymentMeth
 
 	<div className="product-display">
 		<div className="product-image">
-			<img src={image}/>
+			<img src={image} alt=""/>
 		</div>
 		<div className="product-description">
 			<h4>{name}</h4>
