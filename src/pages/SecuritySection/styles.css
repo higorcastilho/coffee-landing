@@ -8,7 +8,7 @@
 #security-section main h2 {
 	font: 2.6rem sans-serif;
 	padding: 2rem 0rem;
-	padding-left: 1.5rem;
+	padding-left: 1rem;
 	letter-spacing: 0;
 	margin-top: 2rem;
 	font-weight: bold;
@@ -37,9 +37,13 @@
 
 #security-section-articles {
 	height: 70vh;
-	padding-left: 1.5rem;
+	padding-left: 1rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-evenly;
+}
+
+#security-section-articles p {
+	margin-top: 1.5rem;
 }

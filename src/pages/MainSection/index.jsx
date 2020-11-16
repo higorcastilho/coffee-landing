@@ -16,7 +16,7 @@ function MainSection() {
 					</h1>
 					<Button route="/payment" name="Fazer pedido"/>
 				</section>
-				<section className="hero_image">	
+				<section className="hero_image">
 				</section>
 			</main>
 		</div>

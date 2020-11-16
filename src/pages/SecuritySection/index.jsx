@@ -17,8 +17,8 @@ function SecuritySection() {
 							<img src={Padlock} alt=""/>
 							<h3>Certificado TLS</h3>
 						</section>
-						<p>Nosso site possui certificado TLS. 
-						Verifique o cadeado próximo à URL no navegador. Esse certificado é a garantia de que seus dados trafegam criptografados de ponta a ponta.</p>
+						<p>Nosso site possui certificado TLS 
+						(verifique o cadeado próximo à URL no navegador). Esse certificado é a garantia de que seus dados trafegam criptografados de ponta a ponta.</p>
 					</article>
 					<article>
 						<section>

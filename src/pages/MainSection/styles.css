@@ -53,7 +53,7 @@ h1 span:nth-child(3) {
 .hero_image {
   width: 250px;
   height: 250px;
-  background-image: url('../../assets/images/whey_coffee.png');
+  background-image: url('../../assets/images/whey_coffee.webp');
   background-size: cover;
 }
 
