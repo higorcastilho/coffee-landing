@@ -14,7 +14,7 @@
 #product-float-left {
 	width: 20rem;
 	float: left;
-	margin-top: -13rem;
+	margin-top: -16rem;
 	margin-left: -2rem;
 }
 
@@ -22,11 +22,11 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-top: 2rem;
+	margin: 0 1rem;
 }
 
 #product-price-section > main > section + section {
-	margin-top: -3rem;
+	margin-top: -0rem;
 }
 
 #product-price-section > main > section >  div > h4 {
@@ -37,16 +37,19 @@
 #product-price-section > main > section >  div > p {
 	font-size: 1.3rem;
 	text-align: center;
+	margin-top: 2rem;
 }
 
 #workout-undraw {
-	width: 15rem;
+	width: 18rem;
 	float: right;
+	margin-right: .4rem;
 
 }
 
 #running-undraw {
-	width: 15rem;
+	width: 18rem;
 	float: left;
+	margin-right: 1rem;
 }
 
