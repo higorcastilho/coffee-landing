@@ -13,7 +13,7 @@ function ProductPrice() {
 			<img id="product-float-left" src={WheyCoffee} alt=""/>
 			<section>
 				<div>
-					<h4>Mais força nos seus treinos</h4>
+					<h4> + Força</h4>
 					<p>
 						A ingestão de proteínas de alto valor biológico
 					 	cria um ambiente favorável para a hipertrofia muscular. 
@@ -25,7 +25,7 @@ function ProductPrice() {
 			<section>
 				<img id="running-undraw" src={Running} alt=""/>
 				<div>
-					<h4>Melhore sua disposição</h4>
+					<h4> + Disposição</h4>
 					<p>
 						Seu Whey Coffee, além de proteínas de alto valor biológico,
 						contém também um dos melhores termogênicos estimulantes do mundo:
