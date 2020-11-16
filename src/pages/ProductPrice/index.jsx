@@ -1,6 +1,6 @@
 import React from 'react'
 
-import WheyCoffee from '../../assets/images/whey_coffee.png'
+import WheyCoffee from '../../assets/images/whey_coffee.webp'
 import Workout from '../../assets/images/workout.svg'
 import Running from '../../assets/images/running.svg'
 
