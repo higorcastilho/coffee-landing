@@ -10,7 +10,7 @@ function ProductPrice() {
 	return (
 	<div id="product-price-section">
 		<main>
-			<img id="product-float-left" src={WheyCoffee} alt=""/>
+			<img id="product-float-left" src={WheyCoffee} width="200" height="182" alt=""/>
 			<section>
 				<div>
 					<h4> + Força</h4>
@@ -19,11 +19,11 @@ function ProductPrice() {
 					 	cria um ambiente favorável para a hipertrofia muscular. 
 					</p>
 				</div>
-				<img id="workout-undraw" src={Workout} alt=""/>
+				<img id="workout-undraw" src={Workout} width="180" height="140" alt=""/>
 			</section>
 
 			<section>
-				<img id="running-undraw" src={Running} alt=""/>
+				<img id="running-undraw" src={Running} width="180" height="140" alt=""/>
 				<div>
 					<h4> + Disposição</h4>
 					<p>

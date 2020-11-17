@@ -13,6 +13,7 @@
 
 #product-float-left {
 	width: 20rem;
+	height: 18.2rem;
 	float: left;
 	margin-top: -16rem;
 	margin-left: -2rem;
@@ -42,6 +43,7 @@
 
 #workout-undraw {
 	width: 18rem;
+	height: 14rem;
 	float: right;
 	margin-right: .4rem;
 
@@ -49,6 +51,7 @@
 
 #running-undraw {
 	width: 18rem;
+	height: 14rem;
 	float: left;
 	margin-right: 1rem;
 }

@@ -14,7 +14,7 @@ function SecuritySection() {
 				<div id="security-section-articles">
 					<article>
 						<section>
-							<img src={Padlock} alt=""/>
+							<img src={Padlock} width="30" height="30" alt=""/>
 							<h3>Certificado TLS</h3>
 						</section>
 						<p>Nosso site possui certificado TLS 
@@ -22,7 +22,7 @@ function SecuritySection() {
 					</article>
 					<article>
 						<section>
-							<img src={Shield} alt=""/>
+							<img src={Shield} width="30" height="30" alt=""/>
 							<h3>Pagamento Seguro</h3>
 						</section>
 						<p>Utilizamos métodos de pagamento largamente utilizados e seguros, garantindo 
@@ -30,7 +30,7 @@ function SecuritySection() {
 					</article>
 					<article>
 						<section>
-							<img src={DeliveryTruck} alt=""/>
+							<img src={DeliveryTruck} width="30" height="30" alt=""/>
 							<h3>Reebolso Garantido</h3>
 						</section>
 						<p>Devolvemos o valor integral pago caso o produto não chegue no prazo estipulado.</p>
