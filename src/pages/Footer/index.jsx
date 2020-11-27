@@ -10,15 +10,13 @@ import './styles.css'
 function Footer() {
 	return (
 		<div id="footer-social-media">
-			<main>
-				<h1>Conecte-se conosco!</h1>
-				<section>
-					<img src={Facebook} width="50" height="50" alt=""/>
-					<img src={Instagram} width="50" height="50" alt=""/>
-					<img src={Whatsapp} width="50" height="50" alt=""/>
-					<img src={Youtube} width="50" height="50" alt=""/>
-				</section>
-			</main>
+			<h1>Conecte-se conosco!</h1>
+			<section>
+				<img src={Facebook} width="50" height="50" alt=""/>
+				<img src={Instagram} width="50" height="50" alt=""/>
+				<img src={Whatsapp} width="50" height="50" alt=""/>
+				<img src={Youtube} width="50" height="50" alt=""/>
+			</section>
 		</div>
 	)
 }
