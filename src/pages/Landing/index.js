@@ -7,6 +7,7 @@ import './styles.css'
 
 const SecuritySection = lazy(() => import('../SecuritySection'))
 const ProductPrice = lazy(() => import('../ProductPrice'))
+const Footer = lazy(() => import('../Footer'))
 const renderLoader = () => <p>Loading</p>
 
 
@@ -18,6 +19,7 @@ function Landing() {
 			<Suspense fallback={renderLoader()}>
 				<ProductPrice />
 				<SecuritySection />
+				<Footer />
 			</Suspense>
 		</div>
 	)

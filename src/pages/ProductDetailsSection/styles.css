@@ -4,13 +4,17 @@
 	background: linear-gradient(90deg, #007CF0, #00DFD8);
 }
 
-#product-details-section {
-	display: grid;
-}
-
 #product-details-section > main > h1 {
 	font-size: 3rem;
 	margin-top: 3rem;
+	letter-spacing: -.2rem;
+	text-align: center;
+}
+
+#product-details-section > main > h2 {
+	font-size: 3rem;
+	color: white;
+	margin-top: -3.5rem;
 	letter-spacing: -.2rem;
 	text-align: center;
 }
@@ -34,3 +38,40 @@
 	text-align: center;
 }
 
+#product-details-price {
+	color: white;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+	height:0rem;
+	justify-items: center;
+	width: 22rem;
+	align-content: center;
+	justify-content: center;
+	margin: 0 auto;
+	margin-top: -4.5rem;
+}
+
+#currency-symbol {
+	grid-column: 1/2;
+	font-size: 3rem;
+	align-self: flex-end;
+	margin-bottom: 2rem;
+}
+
+#integer-fraction {
+	grid-column: 2/4;
+	font-size: 8.8rem;
+	align-self: end;
+}
+
+#decimal-fraction {
+	grid-column: 4/5;
+	font-size: 3rem;
+	align-self: flex-start;
+	margin-top: 2rem;
+}
+
+#details-button {
+	margin-top: -10rem;
+}

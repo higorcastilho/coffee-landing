@@ -1,0 +1,17 @@
+#footer-social-media {
+	background: linear-gradient(90deg, #007CF0, #00DFD8);
+}
+
+#footer-social-media > main > h1 {
+	font-size: 3rem;
+	margin-top: 3rem;
+	letter-spacing: -.2rem;
+	text-align: center;
+}
+
+#footer-social-media > main > section {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	margin-top: 3rem;
+}
