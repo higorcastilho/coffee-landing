@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import stripe from '../../services/payment/stripe'
+import pagseguro from '../../services/payment/pagseguro'
 
 import { useProductQuantifier } from '../../context/ProductQuantity'
 
@@ -52,9 +53,12 @@ function Payment() {
 
 
 	const activateSelectedPayment = () => {
+		console.log(paymentMethod)
 		switch(paymentMethod) {
 			case ('stripe'):
 				return stripe(productDetails.price, quantifier)
+			case ('pagseguro'):
+				return pagseguro()
 			default:
 				return true
 			//case ('paypal'):
