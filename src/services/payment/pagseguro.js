@@ -35,7 +35,6 @@ export default async function pagseguroCheckout () {
 
 	await fetch(`https://ws.sandbox.pagseguro.uol.com.br/v2/checkout?email=castilhohf@gmail.com&token=3CEE7304837F48409D614F0955B749F2`, {
 		method: 'POST',
-		mode: 'no-cors',
 		body: body,
 		headers: {
 			'Content-Type': 'application/x-www-form-urlencoded; charset=ISO-8859-1'
