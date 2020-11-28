@@ -18,7 +18,7 @@ function ProductDetailsSection() {
 					<img src={CoffeeCup} width="50" height="50" alt=""/>
 					<img src={Strong} width="50" height="50" alt=""/>
 				</section>
-				<p> Cada porção de 30 gramas do Whey Coffee contém 22 gramas de proteína. </p>
+				<p> Cada porção de 28 gramas do Whey Coffee contém 24 gramas de proteína. </p>
 				<h2>Por apenas</h2>
 				<div id="product-details-price">
 					<div id="currency-symbol">R$</div>

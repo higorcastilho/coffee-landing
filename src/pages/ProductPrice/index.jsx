@@ -13,7 +13,7 @@ function ProductPrice() {
 			<img id="product-float-left" src={WheyCoffee} width="200" height="182" alt=""/>
 			<article>
 				<div id="text-workout-undraw">
-					<h4> + Força</h4>
+					<h4> + Músculos</h4>
 					<p>
 						A ingestão de proteínas de alto valor biológico
 					 	cria um ambiente favorável para a hipertrofia muscular. 

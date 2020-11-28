@@ -48,6 +48,14 @@
 	background-color: #007CC0
 }
 
+.product-display > section {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	margin: 0 auto;
+	height: 15rem;
+}
+
 @media screen and (max-width: 768px) {
 	.product-display > button {
 		width: 28rem;

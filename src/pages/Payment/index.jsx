@@ -15,12 +15,11 @@ import './styles.css'
 function Payment() {
 
 	const [paymentMethod, setPaymentMethod] = useState('paypal')
-	
+
 	const [productDetails] = useState({
 		image: "https://www.corpoevidashop.com.br/images/products/full/f1211-whey-protein-coffee-gourmet-700g-performance-nutrition.1593539033.jpg",
 		name: "Whey Coffee",
-		price: 20,
-		quantity: 2
+		price: 20
 	})
 
 	function handleSelectedPaymentMethod(e) {
@@ -122,7 +121,6 @@ function Payment() {
 						image={productDetails.image}
 						name={productDetails.name}
 						price={productDetails.price}
-						quantity={productDetails.quantity}
 						paymentMethod={paymentMethod}
 					/>
 				</section>
