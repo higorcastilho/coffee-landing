@@ -2,11 +2,18 @@ import { loadStripe } from '@stripe/stripe-js'
 
 const stripePromise = loadStripe("pk_test_51HkktyJc2DIm0ASQXNJkULs2w7SFabjvHbdC6Xi5koXGQxWU4JGfU9AFdvnpsssQ009i6MYyHZalYM3E8IMQJ62b008eLiJPxk")
 
-export default async function stripeCheckout() {
+export default async function stripeCheckout(value, quantity) {
 	const stripe = await stripePromise
 
 	const response = await fetch('http://localhost:5000/api/v1/stripe/create-session', {
-		method: "POST"
+		method: "POST",
+		body: JSON.stringify({
+			value,
+			quantity 
+		}),
+		headers: {
+			'Content-type': 'application/json; charset=UTF-8' 
+		}
 	})
 
 	console.log(response)

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 
 import stripe from '../../services/payment/stripe'
 
+import { useProductQuantifier } from '../../context/ProductQuantity'
+
 import PaymentMethod from '../../components/PaymentMethod'
 import ProductDisplay from '../../components/ProductDisplay'
 
@@ -16,10 +18,12 @@ function Payment() {
 
 	const [paymentMethod, setPaymentMethod] = useState('paypal')
 
+	const { quantifier } = useProductQuantifier()
+
 	const [productDetails] = useState({
 		image: "https://www.corpoevidashop.com.br/images/products/full/f1211-whey-protein-coffee-gourmet-700g-performance-nutrition.1593539033.jpg",
 		name: "Whey Coffee",
-		price: 20
+		price: 49.90
 	})
 
 	function handleSelectedPaymentMethod(e) {
@@ -50,7 +54,7 @@ function Payment() {
 	const activateSelectedPayment = () => {
 		switch(paymentMethod) {
 			case ('stripe'):
-				return stripe()
+				return stripe(productDetails.price, quantifier)
 			default:
 				return true
 			//case ('paypal'):
