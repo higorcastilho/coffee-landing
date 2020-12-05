@@ -20,7 +20,7 @@ const ProductDisplay = ({ handleClick, image, name, price, paymentMethod }) => {
 		<section>
 			<div className="product-description">
 				<h4>{name}</h4>
-				<h3>R${price * quantifier}</h3>
+				<h3>R${(price * quantifier).toFixed(2)}</h3>
 				<h4>Qtd {quantifier}. R${price} cada</h4>
 			</div>
 			<QuantifierButton />
