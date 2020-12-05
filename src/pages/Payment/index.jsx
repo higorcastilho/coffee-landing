@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
 import stripe from '../../services/payment/stripe'
-import pagseguro from '../../services/payment/pagseguro'
 
 import { useProductQuantifier } from '../../context/ProductQuantity'
 
@@ -17,9 +16,22 @@ import './styles.css'
 
 function Payment() {
 
+	const { quantifier } = useProductQuantifier()
 	const [paymentMethod, setPaymentMethod] = useState('paypal')
 
-	const { quantifier } = useProductQuantifier()
+	const [orderInfo, setOrderInfo ] = useState({
+		name: '',
+		email: '',
+		phone: '',
+		address: '',
+		zip: '',
+		paymentMethod: '',
+		orderNumber: 'get_from_stripe',
+		price: 49.90,
+		quantity: '',
+		orderStatus: 'pendente'
+
+	})
 
 	const [productDetails] = useState({
 		image: "https://www.corpoevidashop.com.br/images/products/full/f1211-whey-protein-coffee-gourmet-700g-performance-nutrition.1593539033.jpg",
@@ -52,29 +64,37 @@ function Payment() {
 	}
 
 
-	const activateSelectedPayment = () => {
-		console.log(paymentMethod)
+	const activateSelectedPayment = async (orderId) => {
 		switch(paymentMethod) {
 			case ('stripe'):
-				return stripe(productDetails.price, quantifier)
-			case ('pagseguro'):
-				return pagseguro()
+				return await stripe(productDetails.price, quantifier, orderId)
 			default:
 				return true
-			//case ('paypal'):
-			//	return paypal()
-			//case ('pagseguro'):
-			//	return pagseguro()
-			//case ('marcadopago'):
-			//	return mercadopago()
 		}
 	}
 
-	const handleClick = async (event) => {
-		await activateSelectedPayment()
+	const handleCreateOrder = async () => {
+		fetch('http://localhost:5000/api/v1/customer-order/create-order', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({orderInfo})
+		}).then( response => {
+			return response.json()
+		}).then( async ( data )  => {
+			await activateSelectedPayment(data.orderId)
+		})
+	}
+
+	//4000000760000002
+	const handleClick = async () => {
+		await handleCreateOrder()
 	}
 
 	useEffect(() => {
+
+		setOrderInfo({...orderInfo, paymentMethod, quantity: quantifier})
 
 		//styles selected payment method button
 		const selectedPaymentMethod = document.getElementById(paymentMethod)
@@ -97,16 +117,47 @@ function Payment() {
 					<h2>Informações de envio</h2>
 
 					<fieldset>
-						<input id="complete_name" placeholder="Nome completo" type="text"/>
-						<input id="email" placeholder="Email" type="text"/>
-						<input id="phone" placeholder="Telefone" type="text"/>
-						<input id="adress" placeholder="Endereço para Entrega" type="text"/>
+						<input 
+							id="complete_name" 
+							placeholder="Nome completo" 
+							type="text"
+							onChange={ e => {
+								setOrderInfo({...orderInfo, name: e.target.value})
+							}}
+						/>
+						<input 
+							id="email" 
+							placeholder="Email" 
+							type="text"
+							onChange={ e => {
+								setOrderInfo({...orderInfo, email: e.target.value})
+							}}
+						/>
+						<input 
+							id="phone" 
+							placeholder="Telefone" 
+							type="text"
+							onChange={ e => {
+								setOrderInfo({...orderInfo, phone: e.target.value})
+							}}
+						/>
+						<input 
+							id="address" 
+							placeholder="Endereço para Entrega" 
+							type="text"
+							onChange={ e => {
+								setOrderInfo({...orderInfo, address: e.target.value})
+							}}
+						/>
 						<input 
 							id="zip_code" 
 							placeholder="CEP (Ex: 00000-000)" 
 							type="text"
 							pattern="\d{5}-\d{3}"
 							title="Formato 00000-000"
+							onChange={ e => {
+								setOrderInfo({...orderInfo, zip: e.target.value})
+							}}
 						/>
 					</fieldset>
 				</section>
