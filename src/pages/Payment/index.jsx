@@ -52,18 +52,7 @@ function Payment() {
 			setPaymentMethod(e.target.id)
 		}
 	}
-
-	function handleFindAvaiablePaymentMethods() {
-
-		const paymentMethodElements = document.getElementsByClassName('payment_method') 
-		const avaiablePaymentMethods = []
-		for (let i = 0; i < paymentMethodElements.length; i++) {
-			avaiablePaymentMethods.push(paymentMethodElements[i].childNodes[0].id)
-		}
-		return avaiablePaymentMethods
-	}
-
-
+	
 	const activateSelectedPayment = async (orderId) => {
 		switch(paymentMethod) {
 			case ('stripe'):
@@ -90,6 +79,16 @@ function Payment() {
 	//4000000760000002
 	const handleClick = async () => {
 		await handleCreateOrder()
+	}
+
+	function handleFindAvaiablePaymentMethods() {
+
+		const paymentMethodElements = document.getElementsByClassName('payment_method') 
+		const avaiablePaymentMethods = []
+		for (let i = 0; i < paymentMethodElements.length; i++) {
+			avaiablePaymentMethods.push(paymentMethodElements[i].childNodes[0].id)
+		}
+		return avaiablePaymentMethods
 	}
 
 	useEffect(() => {
