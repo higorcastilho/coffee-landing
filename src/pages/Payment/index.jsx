@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import stripe from '../../services/payment/stripe'
+import Order from '../../services/api/Order'
 
 import { useProductQuantifier } from '../../context/ProductQuantity'
 
@@ -30,7 +31,6 @@ function Payment() {
 		price: 49.90,
 		quantity: '',
 		orderStatus: 'pendente'
-
 	})
 
 	const [productDetails] = useState({
@@ -63,16 +63,8 @@ function Payment() {
 	}
 
 	const handleCreateOrder = async () => {
-		fetch('http://localhost:5000/api/v1/customer-order/create-order', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({orderInfo})
-		}).then( response => {
-			return response.json()
-		}).then( async ( data )  => {
-			await activateSelectedPayment(data.orderId)
+		await Order.createOrder(orderInfo).then( res => {
+			activateSelectedPayment(res)
 		})
 	}
 
@@ -95,7 +87,7 @@ function Payment() {
 
 		setOrderInfo( orderInfo => ({...orderInfo, paymentMethod, quantity: quantifier}))
 
-		//styles selected payment method button
+		//styles with a shadow the selected payment method button
 		const selectedPaymentMethod = document.getElementById(paymentMethod)
 		selectedPaymentMethod.parentNode.style.boxShadow = "0 0 3rem #808080"
 		
@@ -105,7 +97,7 @@ function Payment() {
 		notSelectedPaymentMethod.forEach(item => {
 			document.getElementById(item).parentNode.style.boxShadow = "0 0 .7rem #949494"
 		})
-		
+
 	}, [paymentMethod, quantifier])
 
 	return (

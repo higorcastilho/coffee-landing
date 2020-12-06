@@ -1,4 +1,7 @@
 import React, { useEffect } from 'react'
+
+import Http from '../../services/http'
+
 import Box from '../../assets/images/box.svg'
 import BoxHeart from '../../assets/images/box_heart.svg'
 
@@ -14,20 +17,10 @@ function CheckoutStatus () {
 			const canceled = urlParams.get('canceled')
 			const orderId = urlParams.get('order')
 			
-			await fetch('http://localhost:5000/api/v1/customer-order/update-order-status', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({
-					success,
-					canceled,
-					orderId
-				})
-			})
+			const payload = { path: '/customer-order/update-order-status', body: { success, canceled, orderId }}
+			await Http.post(payload)
 		}
 		getOrderId()
-
 	}, [])
 
 	return (
