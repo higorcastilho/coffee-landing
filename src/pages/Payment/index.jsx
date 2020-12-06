@@ -93,7 +93,7 @@ function Payment() {
 
 	useEffect(() => {
 
-		setOrderInfo({...orderInfo, paymentMethod, quantity: quantifier})
+		setOrderInfo( orderInfo => ({...orderInfo, paymentMethod, quantity: quantifier}))
 
 		//styles selected payment method button
 		const selectedPaymentMethod = document.getElementById(paymentMethod)
@@ -105,8 +105,8 @@ function Payment() {
 		notSelectedPaymentMethod.forEach(item => {
 			document.getElementById(item).parentNode.style.boxShadow = "0 0 .7rem #949494"
 		})
-
-	}, [paymentMethod])
+		
+	}, [paymentMethod, quantifier])
 
 	return (
 		<div className="payment_page">
