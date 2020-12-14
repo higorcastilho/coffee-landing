@@ -21,3 +21,16 @@
 	width: 4rem;
 	height: 4rem;
 }
+
+@media (min-width: 800px) {
+	#footer-social-media > section {
+		justify-content: center;
+		margin-top: 4.5rem;
+		padding-bottom: 10rem;
+	}
+
+	#footer-social-media > section > img {
+		margin: 0 5rem;
+		cursor: pointer;
+	}
+}

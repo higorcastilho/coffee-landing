@@ -48,3 +48,29 @@
 #security-section-articles p {
 	margin-top: 1.5rem;
 }
+
+@media (min-width: 800px) {
+
+	#security-section-articles {
+		display: initial;
+		margin-top: -5rem;
+	}
+
+	#security-section-articles > article {
+		width: 100%;
+		margin: 6rem auto
+	}
+
+	#security-section > main {
+		display: flex;
+		flex-direction: column;
+	}
+
+	#security-section > main > h2 {
+		font-size: 4rem;
+	}
+
+	#security-section p {
+		text-align: start;
+	}
+}

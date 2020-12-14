@@ -100,7 +100,7 @@
 
 	#product-details-section > main > h1 {
 		font-size: 4rem;
-		margin-top: -3rem;
+		margin-top: 3rem;
 		margin-bottom: 2rem;
 		letter-spacing: -.2rem;
 	}
@@ -110,11 +110,11 @@
 	}
 
 	#product-details-price {
-		margin-top: 6rem;
+		margin-top: 4rem;
 	}
 
 	#product-details-section > main > h2 {
-		margin-top: 5rem;
+		margin-top: 2rem;
 	}
 
 	#product-details-section > main > section > img {
