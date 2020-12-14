@@ -1,4 +1,4 @@
-const API_END_POINT = 'http://localhost:5000/api/v1'
+const API_END_POINT = 'http://localhost:5858/api/v1'
 
 class Http {
 	
@@ -16,4 +16,4 @@ class Http {
 	}
 }
 
-export default new Http
+export default new Http()

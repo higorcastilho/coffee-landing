@@ -6,8 +6,7 @@ const stripePromise = loadStripe(PK_STRIPE)
 
 export default async function stripeCheckout(value, quantity, orderId) {
 	const stripe = await stripePromise
-
-	const payload = { path: '/stripe/create-session', body: {value, quantity, orderId}}
+	const payload = { path: '/create-customer-order/stripe', body: {value, quantity, orderId}}
 	const response = await Http.post(payload)
 	const session = await response.json()
 

@@ -63,7 +63,7 @@ function Payment() {
 	}
 
 	const handleCreateOrder = async () => {
-		await Order.createOrder(orderInfo).then( res => {
+		Order.createOrder(orderInfo).then( res => {
 			activateSelectedPayment(res)
 		})
 	}
