@@ -92,10 +92,16 @@ h1 span:nth-child(3) {
     justify-content: space-evenly;
     padding: 12rem;
     height: 100vh;
+    margin-top: 0;
   }
 
   .hero_image {
-    width: 380px;
-    height: 380px;
+    width: 310px;
+    height: 310px;
   }
+
+  h1 {
+    font-size: 8rem;
+  }
+
 }

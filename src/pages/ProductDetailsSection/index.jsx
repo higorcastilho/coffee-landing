@@ -5,6 +5,7 @@ import Button from '../../components/Button'
 import Dna from '../../assets/images/dna.svg'
 import CoffeeCup from '../../assets/images/coffee-cup.svg'
 import Strong from '../../assets/images/strong.svg'
+import WomanTraining from '../../assets/images/woman-training.svg'
 
 import './styles.css'
 
@@ -29,6 +30,7 @@ function ProductDetailsSection() {
 					<Button route="/payment" name="Fazer pedido"/>
 				</div>
 			</main>
+			<img className="aside-desktop-image" src={WomanTraining} alt=""/>
 		</div>
 	)
 }

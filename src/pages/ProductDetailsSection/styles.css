@@ -75,3 +75,76 @@
 #details-button {
 	margin-top: -10rem;
 }
+
+.aside-desktop-image {
+	display: none;
+}
+
+@media (min-width: 800px) {
+
+	#product-details-section {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		margin: 0 auto
+	}
+
+	#product-details-section > main {
+		display: flex;
+		width: 55%;
+		flex-direction: column;
+		align-items: center;
+		margin: 0 auto;
+	}
+
+	#product-details-section > main > h1 {
+		font-size: 4rem;
+		margin-top: -3rem;
+		margin-bottom: 2rem;
+		letter-spacing: -.2rem;
+	}
+
+	#product-details-section > main > p {
+		font-size: 1.6rem;
+	}
+
+	#product-details-price {
+		margin-top: 6rem;
+	}
+
+	#product-details-section > main > h2 {
+		margin-top: 5rem;
+	}
+
+	#product-details-section > main > section > img {
+		width: 10rem;
+		height: 6rem;
+	}
+
+	#currency-symbol {
+		font-size: 3rem;
+		margin-bottom: 2rem;
+	}
+
+	#integer-fraction {
+		font-size: 8.8rem;
+	}
+
+	#decimal-fraction {
+		font-size: 2rem;
+		margin-top: 2rem;
+	}
+
+	#details-button {
+		margin-top: 4rem;
+	}
+
+	.aside-desktop-image {
+		display: initial;
+		width: 40rem;
+		margin: 0 auto;
+		margin-left: -10rem;
+	}
+
+}
