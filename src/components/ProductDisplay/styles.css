@@ -32,14 +32,14 @@
 	display: block;
 	background-color: #007CF0;
 	color: white;
-	padding: 2rem;
+	padding: 1.5rem 0;
 	border-radius: .5rem;
 	margin: 2rem auto;
-	width: 20rem;
-	height: 6.5rem;
+	width: 28rem;
+	height: 5rem;
 	text-align: center;
 	text-decoration: none;
-	font-size: 1.2rem;
+	font-size: 1.5rem;
 	box-shadow: 0 0 1.8rem #949494;
 	border: 0;
 }
@@ -56,11 +56,22 @@
 	height: 15rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 800px) {
 	.product-display > button {
-		width: 28rem;
-		height: 5rem;
-		font-size: 1.5rem;
-		padding: 1.5rem 0;
+		padding: 2rem;
+		width: 20rem;
+		height: 6.5rem;
+		font-size: 1.3rem;
+	}
+
+	.product-display {
+		width: 45%;
+		max-width: 70rem;
+		margin: 0 auto;
+		margin-bottom: 5rem
+	}
+
+	.product-image {
+		width: 100%;
 	}
 }

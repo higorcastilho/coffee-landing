@@ -8,7 +8,6 @@
 }
 
 .payment_method button {
-
 	display: block;
 	border-radius: .5rem;
 	color: white;
@@ -19,6 +18,7 @@
 	font-size: 1.8rem;
 	border: none;
 	outline: none;
+	width: 100%;
 }
 
 .payment_method img {
@@ -28,3 +28,14 @@
 	height: 4rem;
 }
 
+@media (min-width: 800px) {
+	.payment_method {
+		width: 45%;
+		max-width: 70rem;
+	}
+
+	.payment_method img {
+		width: 100%;
+		margin-left: 0 auto;
+	}
+}

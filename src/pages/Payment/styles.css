@@ -70,3 +70,16 @@ form fieldset section input:first-child {
 	width: 14rem;
 	margin-top: 5rem;
 }
+
+@media (min-width: 800px) {
+	fieldset {
+		width: 45%;
+		max-width: 70rem;
+		margin: 0 auto;
+	}
+
+	h2, p {
+		text-align: center;
+	}
+
+}
