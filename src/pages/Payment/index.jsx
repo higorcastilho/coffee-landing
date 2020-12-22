@@ -19,7 +19,7 @@ function Payment() {
 
   	const { quantifier } = useProductQuantifier()
 	const [paymentMethod, setPaymentMethod] = useState('paypal')
-
+	let nameasdasd
 	const [orderInfo, setOrderInfo ] = useState({
 		name: '',
 		email: '',
