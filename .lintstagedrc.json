@@ -2,9 +2,5 @@
 	"*.jsx": [
 		"standard --fix",
 		"git add"
-	],
-	"*.jsx": [
-		"standard --fix",
-		"git add"
 	]
 } 	
