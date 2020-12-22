@@ -6,6 +6,7 @@ class Order {
 		const payload = { path: '/manage-order', body: orderInfo }
 		const response = await Http.post(payload)
 		const data = await response.json() //quero o data.orderId pra passar pro activateSelectedPayment(data.orderId)
+		console.log(data)
 		return new Promise( (resolve, reject) => {
 			const id = data.orderId
 			if (id) resolve(id)

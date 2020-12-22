@@ -27,7 +27,6 @@ function Payment() {
 		address: '',
 		zip: '',
 		paymentMethod: '',
-		orderNumber: 'get_from_stripe',
 		price: 49.90,
 		quantity: '',
 		orderStatus: 'pendente'
