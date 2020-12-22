@@ -1,6 +1,5 @@
 {
 	"*.jsx": [
-		"standard --fix",
 		"git add"
 	]
-}
+} 	

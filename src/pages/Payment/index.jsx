@@ -17,9 +17,9 @@ import './styles.css'
 
 function Payment() {
 
-  	const { quantifier } = useProductQuantifier()
+	const { quantifier } = useProductQuantifier()
 	const [paymentMethod, setPaymentMethod] = useState('paypal')
-	let nameasdasd
+	
 	const [orderInfo, setOrderInfo ] = useState({
 		name: '',
 		email: '',
@@ -96,7 +96,6 @@ function Payment() {
 		notSelectedPaymentMethod.forEach(item => {
 			document.getElementById(item).parentNode.style.boxShadow = "0 0 .7rem #949494"
 		})
-
 	}, [paymentMethod, quantifier])
 
 	return (
@@ -105,7 +104,6 @@ function Payment() {
 				<section>
 					<p>Passo 1 de 3</p>
 					<h2>Informações de envio</h2>
-
 					<fieldset>
 						<input 
 							id="complete_name" 
