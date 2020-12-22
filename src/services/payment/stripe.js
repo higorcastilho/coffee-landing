@@ -6,13 +6,13 @@ const stripePromise = loadStripe(PK_STRIPE)
 
 export default async function stripeCheckout(value, quantity, orderId) {
 	const stripe = await stripePromise
-	const payload = { path: '/create-customer-order/stripe', body: {value, quantity, orderId}}
+	const formattedValue = value * 100
+	const payload = { path: '/create-customer-order/stripe', body: {value: formattedValue, quantity, currency: 'brl', orderId}}
 	const response = await Http.post(payload)
 	const session = await response.json()
-
-	// When the customer clicks on the button, redirect them to Checkout.
+	
 	const result = await stripe.redirectToCheckout({
-		sessionId: session.id
+		sessionId: session.sessionId
 	})
 
 	if (result.error) {

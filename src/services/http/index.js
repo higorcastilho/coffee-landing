@@ -1,4 +1,4 @@
-const API_END_POINT = 'http://localhost:5858/api/v1'
+const API_END_POINT = 'http://localhost:5858/api/v2'
 
 class Http {
 	
