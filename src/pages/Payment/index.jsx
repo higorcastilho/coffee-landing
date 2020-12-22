@@ -141,8 +141,6 @@ function Payment() {
 							id="zip_code" 
 							placeholder="CEP (Ex: 00000-000)" 
 							type="text"
-							pattern="\d{5}-\d{3}"
-							title="Formato 00000-000"
 							onChange={ e => {
 								setOrderInfo({...orderInfo, zip: e.target.value})
 							}}
