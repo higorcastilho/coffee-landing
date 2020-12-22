@@ -17,7 +17,7 @@ import './styles.css'
 
 function Payment() {
 
-	const { quantifier } = useProductQuantifier()
+  	const { quantifier } = useProductQuantifier()
 	const [paymentMethod, setPaymentMethod] = useState('paypal')
 
 	const [orderInfo, setOrderInfo ] = useState({
