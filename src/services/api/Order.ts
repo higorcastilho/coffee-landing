@@ -1,8 +1,20 @@
 import Http from '../http'
 
+interface OrderInfoProps {
+	name: string
+	email: string
+	phone: string
+	address: string
+	zip: string
+	paymentMethod: string
+	price: number
+	quantity: string
+	orderStatus: string
+}
+
 class Order {
 	
-	async createOrder (orderInfo) {
+	async createOrder (orderInfo: OrderInfoProps) {
 		const payload = { path: '/manage-order', body: orderInfo }
 		const response = await Http.post(payload)
 		const data = await response.json() //quero o data.orderId pra passar pro activateSelectedPayment(data.orderId)
