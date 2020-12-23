@@ -2,7 +2,7 @@ import * as React from 'react'
 
 type QuantifierContextType = {
 	quantifier: number
-	setQuantifier: (quantifierPlusOne) => void
+	setQuantifier: (quantifierPlusOrLessOne: number) => void
 }
 
 const ProductQuantityContext = React.createContext<QuantifierContextType>({} as QuantifierContextType)
