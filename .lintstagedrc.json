@@ -1,5 +1,5 @@
 {
-	"*.tsx": [
+	"*.{ts, tsx, js, jsx}": [
 		"standard --fix",
 		"git add"
 	]
