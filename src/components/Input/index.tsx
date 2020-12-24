@@ -27,7 +27,7 @@ const Input: React.FC<InputProps> = ({ id, orderInfo, setOrderInfo, ...rest }) =
 	const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
 		
 		newOrderInfo[id] = event.target.value
-
+		
 		setOrderInfo({
 			...newOrderInfo,
 		})
