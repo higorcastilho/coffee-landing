@@ -15,6 +15,7 @@ import MercadoPagoLogo from '../../assets/images/mercado_pago_logo.svg'
 import StripeLogo from '../../assets/images/stripe_logo.svg'
 
 import { phoneMask, cepMask } from '../../utils/masks'
+import { emailValidator } from '../../utils/validators'
 
 import './styles.css'
 
@@ -120,6 +121,7 @@ function Payment() {
 							id="email" 
 							placeholder="Email" 
 							type="text"
+							validator={emailValidator}
 							value={ orderInfo.email }
 							orderInfo={orderInfo}
 							setOrderInfo={setOrderInfo}	

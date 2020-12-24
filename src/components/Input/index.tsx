@@ -18,16 +18,25 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	id: string
 	orderInfo: OrderInfoProps
 	setOrderInfo: (OrderInfoProps: OrderInfoProps) => void
-	mask: (value: string) => string
+	mask?: (value: string) => string
+	validator?: (value: string) => string
 }
 
 
-const Input: React.FC<InputProps> = ({ id, orderInfo, setOrderInfo, mask, ...rest }) => {
+const Input: React.FC<InputProps> = ({ id, orderInfo, setOrderInfo, mask, validator, ...rest }) => {
 	
 	const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
 		
-		orderInfo[id] = mask(event.target.value)
-		
+		let input = event.target.value
+		if (mask) {
+			orderInfo[id] = mask(input)
+		} else if (validator) {
+			console.log(validator(input))
+			orderInfo[id] = input
+		} else {
+			orderInfo[id] = input
+		}
+
 		setOrderInfo({ ...orderInfo })
 	}
 	
