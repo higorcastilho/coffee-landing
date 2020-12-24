@@ -2,12 +2,6 @@ import  React, { InputHTMLAttributes, ChangeEvent } from 'react'
 
 import './styles.css'
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-	id: string
-	orderInfo: object
-	setOrderInfo: ({}) => void
-}
-
 interface OrderInfoProps {
 	[name: string]: string
 	email: string
@@ -19,6 +13,13 @@ interface OrderInfoProps {
 	quantity: string
 	orderStatus: string
 }
+
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+	id: string
+	orderInfo: object
+	setOrderInfo: ({}: OrderInfoProps) => void
+}
+
 
 const Input: React.FC<InputProps> = ({ id, orderInfo, setOrderInfo, ...rest }) => {
 	
