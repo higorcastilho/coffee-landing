@@ -14,7 +14,7 @@ import PagseguroLogo from '../../assets/images/pagseguro_logo.svg'
 import MercadoPagoLogo from '../../assets/images/mercado_pago_logo.svg'
 import StripeLogo from '../../assets/images/stripe_logo.svg'
 
-import { phoneMask, cepMask, nameMask } from '../../utils/masks'
+import { phoneMask, cepMask, nameMask, addressMask } from '../../utils/masks'
 import { emailValidator } from '../../utils/validators'
 
 import './styles.css'
@@ -140,6 +140,7 @@ function Payment() {
 							id="address" 
 							placeholder="Endereço para Entrega" 
 							type="text"
+							mask={addressMask}
 							value={ orderInfo.address }
 							orderInfo={orderInfo}
 							setOrderInfo={setOrderInfo}

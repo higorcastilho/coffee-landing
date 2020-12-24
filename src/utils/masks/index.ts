@@ -17,3 +17,8 @@ export const nameMask = (name: string) => {
 		.replace(/\d/g, '')
 		.replace(/[.!#$%&'*+/=?^_`{|}~-]/g, '')
 }
+
+export const addressMask = (name: string) => {
+	return name
+		.replace(/[!#$%&'*+/=?^_`{|}~]/g, '')
+}
