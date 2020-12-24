@@ -14,6 +14,8 @@ import PagseguroLogo from '../../assets/images/pagseguro_logo.svg'
 import MercadoPagoLogo from '../../assets/images/mercado_pago_logo.svg'
 import StripeLogo from '../../assets/images/stripe_logo.svg'
 
+import { phoneMask, cepMask } from '../../utils/masks'
+
 import './styles.css'
 
 function Payment() {
@@ -110,6 +112,7 @@ function Payment() {
 							id="name"
 							placeholder="Nome completo"
 							type="text"
+							value={ orderInfo.name }
 							orderInfo={orderInfo}
 							setOrderInfo={setOrderInfo}
 						/>
@@ -117,6 +120,7 @@ function Payment() {
 							id="email" 
 							placeholder="Email" 
 							type="text"
+							value={ orderInfo.email }
 							orderInfo={orderInfo}
 							setOrderInfo={setOrderInfo}	
 						/>
@@ -124,6 +128,8 @@ function Payment() {
 							id="phone" 
 							placeholder="Telefone" 
 							type="text"
+							mask={phoneMask}
+							value={ orderInfo.phone }
 							orderInfo={orderInfo}
 							setOrderInfo={setOrderInfo}
 						/>
@@ -131,6 +137,7 @@ function Payment() {
 							id="address" 
 							placeholder="Endereço para Entrega" 
 							type="text"
+							value={ orderInfo.address }
 							orderInfo={orderInfo}
 							setOrderInfo={setOrderInfo}
 						/>
@@ -138,6 +145,8 @@ function Payment() {
 							id="zip" 
 							placeholder="CEP (Ex: 00000-000)" 
 							type="text"
+							mask={cepMask}
+							value={ orderInfo.zip }
 							orderInfo={orderInfo}
 							setOrderInfo={setOrderInfo}
 						/>
