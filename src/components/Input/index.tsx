@@ -1,8 +1,8 @@
-import * as React from 'react'
+import  React, { InputHTMLAttributes, ChangeEvent } from 'react'
 
 import './styles.css'
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	id: string
 	orderInfo: object
 	setOrderInfo: ({}) => void
@@ -24,7 +24,7 @@ const Input: React.FC<InputProps> = ({ id, orderInfo, setOrderInfo, ...rest }) =
 	
 	let newOrderInfo = orderInfo as OrderInfoProps
 
-	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+	const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
 		
 		newOrderInfo[id] = event.target.value
 		
