@@ -6,7 +6,7 @@ import Landing from './pages/Landing'
 const Payment = lazy(() => import('./pages/Payment'))
 const CheckoutStatus = lazy(() => import('./pages/CheckoutStatus'))
 const renderLoader = () => <p>Loading</p>
-const 
+
 const Routes = () => {
 	return (
 		<Router>
