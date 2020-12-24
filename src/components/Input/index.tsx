@@ -7,7 +7,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	orderInfo: object
 	setOrderInfo: ({}) => void
 }
-let a = 1
+let a = 3
 interface OrderInfoProps {
 	[name: string]: string
 	email: string
