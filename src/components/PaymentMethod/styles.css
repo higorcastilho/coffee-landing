@@ -2,7 +2,7 @@
 	display: block;
 	width: 90%;
 	padding: 1rem;
-	
+	max-width: 60rem;
 	margin: 2rem auto;
 	box-shadow: 0 0 .7rem #949494;
 }
@@ -18,7 +18,9 @@
 	font-size: 1.8rem;
 	border: none;
 	outline: none;
+	max-width: 60rem;
 	width: 100%;
+	margin: 0 auto;
 }
 
 .payment_method img {
@@ -26,16 +28,6 @@
 	width: 50%;
 	margin: 0 auto;
 	height: 4rem;
+	max-width: 60rem;
 }
 
-@media (min-width: 800px) {
-	.payment_method {
-		width: 45%;
-		max-width: 70rem;
-	}
-
-	.payment_method img {
-		width: 100%;
-		margin-left: 0 auto;
-	}
-}

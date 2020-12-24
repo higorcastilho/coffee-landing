@@ -4,14 +4,15 @@
 	margin: 0 2rem;
 	margin-bottom: 10rem;
 	box-shadow: 0 0 .7rem #949494;
+	max-width: 60rem;
+	margin: 0 auto;
+	margin-bottom: 8rem;
 }
 
-.product-image {
-	width: 100vw;
-}
 .product-image > img {
 	display: block;
-	width: 25rem;
+	max-width: 25rem;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -62,16 +63,5 @@
 		width: 20rem;
 		height: 6.5rem;
 		font-size: 1.3rem;
-	}
-
-	.product-display {
-		width: 45%;
-		max-width: 70rem;
-		margin: 0 auto;
-		margin-bottom: 5rem
-	}
-
-	.product-image {
-		width: 100%;
 	}
 }

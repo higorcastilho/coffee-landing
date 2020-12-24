@@ -20,12 +20,18 @@ p {
 	font-size: 1.2rem;
 }
 
+.payment_page > form > section {
+	margin: 0 2rem;
+}
+
 fieldset {
 	border: none;
+	max-width: 60rem;
+	width: 100%;
 	height: 35rem;
 	padding: 1rem .1rem;
-	margin: 0 2rem;
 	box-shadow: 0 0 .7rem #949494;
+	margin: 0 auto;
 }
 
 form fieldset section {
@@ -53,12 +59,6 @@ form fieldset section input:first-child {
 }
 
 @media (min-width: 800px) {
-	fieldset {
-		width: 45%;
-		max-width: 70rem;
-		margin: 0 auto;
-	}
-
 	h2, p {
 		text-align: center;
 	}
