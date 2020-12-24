@@ -7,6 +7,7 @@ import { useProductQuantifier } from '../../context/ProductQuantity'
 
 import PaymentMethod from '../../components/PaymentMethod'
 import ProductDisplay from '../../components/ProductDisplay'
+import Input from '../../components/Input'
 
 import PaypalLogo from '../../assets/images/paypal_logo.svg'
 import PagseguroLogo from '../../assets/images/pagseguro_logo.svg'
@@ -37,6 +38,8 @@ function Payment() {
 		name: "Whey Coffee",
 		price: 49.90
 	})
+
+	console.log(orderInfo)
 
 	function handleSelectedPaymentMethod(e) {
 		e.preventDefault()
@@ -105,45 +108,40 @@ function Payment() {
 					<p>Passo 1 de 3</p>
 					<h2>Informações de envio</h2>
 					<fieldset>
-						<input 
-							id="complete_name" 
-							placeholder="Nome completo" 
+						<Input 
+							id="name"
+							placeholder="Nome completo"
 							type="text"
-							onChange={ e => {
-								setOrderInfo({...orderInfo, name: e.target.value})
-							}}
+							orderInfo={orderInfo}
+							setOrderInfo={setOrderInfo}
 						/>
-						<input 
+						<Input 
 							id="email" 
 							placeholder="Email" 
 							type="text"
-							onChange={ e => {
-								setOrderInfo({...orderInfo, email: e.target.value})
-							}}
+							orderInfo={orderInfo}
+							setOrderInfo={setOrderInfo}	
 						/>
-						<input 
+						<Input 
 							id="phone" 
 							placeholder="Telefone" 
 							type="text"
-							onChange={ e => {
-								setOrderInfo({...orderInfo, phone: e.target.value})
-							}}
+							orderInfo={orderInfo}
+							setOrderInfo={setOrderInfo}
 						/>
-						<input 
+						<Input 
 							id="address" 
 							placeholder="Endereço para Entrega" 
 							type="text"
-							onChange={ e => {
-								setOrderInfo({...orderInfo, address: e.target.value})
-							}}
+							orderInfo={orderInfo}
+							setOrderInfo={setOrderInfo}
 						/>
-						<input 
-							id="zip_code" 
+						<Input 
+							id="zip" 
 							placeholder="CEP (Ex: 00000-000)" 
 							type="text"
-							onChange={ e => {
-								setOrderInfo({...orderInfo, zip: e.target.value})
-							}}
+							orderInfo={orderInfo}
+							setOrderInfo={setOrderInfo}
 						/>
 					</fieldset>
 				</section>
