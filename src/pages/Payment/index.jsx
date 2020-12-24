@@ -39,8 +39,6 @@ function Payment() {
 		price: 49.90
 	})
 
-	console.log(orderInfo)
-
 	function handleSelectedPaymentMethod(e) {
 		e.preventDefault()
 
