@@ -16,22 +16,18 @@ interface OrderInfoProps {
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	id: string
-	orderInfo: object
+	orderInfo: OrderInfoProps
 	setOrderInfo: (OrderInfoProps: OrderInfoProps) => void
 }
 
 
 const Input: React.FC<InputProps> = ({ id, orderInfo, setOrderInfo, ...rest }) => {
 	
-	let newOrderInfo = orderInfo as OrderInfoProps
-
 	const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
 		
-		newOrderInfo[id] = event.target.value
+		orderInfo[id] = event.target.value
 		
-		setOrderInfo({
-			...newOrderInfo,
-		})
+		setOrderInfo({ ...orderInfo })
 	}
 	
 	return (
