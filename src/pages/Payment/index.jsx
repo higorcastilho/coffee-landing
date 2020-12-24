@@ -129,7 +129,7 @@ function Payment() {
 						/>
 						<Input 
 							id="phone" 
-							placeholder="Telefone" 
+							placeholder="Telefone (Apenas números)" 
 							type="text"
 							mask={phoneMask}
 							value={ orderInfo.phone }
@@ -147,7 +147,7 @@ function Payment() {
 						/>
 						<Input 
 							id="zip" 
-							placeholder="CEP (Ex: 00000-000)" 
+							placeholder="CEP (Apenas números)" 
 							type="text"
 							mask={cepMask}
 							value={ orderInfo.zip }
