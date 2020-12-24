@@ -14,7 +14,7 @@ import PagseguroLogo from '../../assets/images/pagseguro_logo.svg'
 import MercadoPagoLogo from '../../assets/images/mercado_pago_logo.svg'
 import StripeLogo from '../../assets/images/stripe_logo.svg'
 
-import { phoneMask, cepMask } from '../../utils/masks'
+import { phoneMask, cepMask, nameMask } from '../../utils/masks'
 import { emailValidator } from '../../utils/validators'
 
 import './styles.css'
@@ -113,6 +113,7 @@ function Payment() {
 							id="name"
 							placeholder="Nome completo"
 							type="text"
+							mask={nameMask}
 							value={ orderInfo.name }
 							orderInfo={orderInfo}
 							setOrderInfo={setOrderInfo}

@@ -11,3 +11,9 @@ export const cepMask = (value: string) => {
 		.replace(/(\d{5})(\d{3})/, '$1-$2')
 		.replace(/(-\d{3})\d+?$/, '$1')
 }
+
+export const nameMask = (name: string) => {
+	return name
+		.replace(/\d/g, '')
+		.replace(/[.!#$%&'*+/=?^_`{|}~-]/g, '')
+}
