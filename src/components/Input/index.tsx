@@ -17,7 +17,7 @@ interface OrderInfoProps {
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	id: string
 	orderInfo: object
-	setOrderInfo: ({}: OrderInfoProps) => void
+	setOrderInfo: (OrderInfoProps: OrderInfoProps) => void
 }
 
 
