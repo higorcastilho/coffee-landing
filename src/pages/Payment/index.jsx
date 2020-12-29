@@ -33,7 +33,7 @@ function Payment() {
 		paymentMethod: '',
 		price: 49.90,
 		quantity: '',
-		orderStatus: 'pendente'
+		orderStatus: 'não'
 	})
 
 	const [productDetails] = useState({
@@ -66,8 +66,21 @@ function Payment() {
 	}
 
 	const handleCreateOrder = async () => {
-		Order.createOrder(orderInfo).then( res => {
+		Order.createOrder(orderInfo).then( async res => {
 			activateSelectedPayment(res)
+			await fetch('http://localhost:5000/new-order', {
+				method: 'POST',
+				headers: {
+					"Content-Type": "application/json; charset=UTF-8"
+				},
+				body: JSON.stringify({
+					_id: res,
+					email: orderInfo.email,
+					price: orderInfo.price,
+					quantity: orderInfo.quantity,
+					orderStatus: orderInfo.orderStatus
+				})
+			})
 		})
 	}
 

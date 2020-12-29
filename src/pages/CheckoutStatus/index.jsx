@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Http from '../../services/http'
 
@@ -9,19 +9,39 @@ import './styles.css'
 
 //thanks to good ware / flaticons / Freepik
 function CheckoutStatus () {
-	
+	const [orderId, setOrderId] = useState('')
 	useEffect(() => {
 		async function getOrderId () {
 			const urlParams = new URLSearchParams(window.location.search)
-			const success = urlParams.get('success')
-			const canceled = urlParams.get('canceled')
-			const orderId = urlParams.get('order')
+			let success = urlParams.get('success')
+			let canceled = urlParams.get('canceled')
+			setOrderId(urlParams.get('order'))
 			
-			const payload = { path: '/customer-order/update-order-status', body: { success, canceled, orderId }}
-			await Http.post(payload)
+			if (!success) {
+				success= "false"
+			}
+
+			if (!canceled) {
+				canceled = "false"
+			}
+
+			console.log(success, canceled, orderId)
+			const payload = { path: '/update-order-status', body: { success, canceled, orderId }}
+
+			Http.post(payload).then( async () => {
+				const response = await fetch('http://localhost:5000/send-notification', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json; charset=UTF-8'
+					},
+					body: JSON.stringify({ orderId })
+				})
+
+				const data = await response.json()
+			})
 		}
 		getOrderId()
-	}, [])
+	}, [orderId])
 
 	return (
 		<div id="checkout-page">
