@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import Http from '../../services/http'
+import Emitter from '../../services/emitter'
 
 import Box from '../../assets/images/box.svg'
 import BoxHeart from '../../assets/images/box_heart.svg'
@@ -25,20 +26,11 @@ function CheckoutStatus () {
 				canceled = "false"
 			}
 
-			console.log(success, canceled, orderId)
 			const payload = { path: '/update-order-status', body: { success, canceled, orderId }}
 
 			Http.post(payload).then( async () => {
-				const response = await fetch('http://localhost:5000/live-data-emitter/v2/update-order-status', {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json; charset=UTF-8'
-					},
-					body: JSON.stringify({ notificationName: 'updateStatus', data: orderId })
-				})
-
-				const data = await response.json()
-				console.log(data)
+				const emitterPayload = { path: '/update-order-status', body: { notificationName: 'updateStatus', data: orderId }}
+				await Emitter.post(emitterPayload)
 			})
 		}
 		getOrderId()

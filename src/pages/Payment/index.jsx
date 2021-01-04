@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import stripe from '../../services/payment/stripe'
 import Order from '../../services/api/Order'
+import Emitter from '../../services/emitter'
 
 import { useProductQuantifier } from '../../context/ProductQuantity'
 
@@ -68,22 +69,21 @@ function Payment() {
 	const handleCreateOrder = async () => {
 		Order.createOrder(orderInfo).then( async res => {
 			activateSelectedPayment(res)
-			await fetch('http://localhost:5000/live-data-emitter/v2/pop-up-order', {
-				method: 'POST',
-				headers: {
-					"Content-Type": "application/json; charset=UTF-8"
-				},
-				body: JSON.stringify({
-					notificationName: 'popUpOrder',
+			
+			const emitterPayload = { 
+				path: '/pop-up-order', 
+				body: { 
+					notificationName: 'popUpOrder', 
 					data: {
 						_id: res,
 						email: orderInfo.email,
 						price: orderInfo.price,
 						quantity: orderInfo.quantity,
 						orderStatus: orderInfo.orderStatus
-					}
-				})
-			})
+					} 
+				}
+			}
+			Emitter.post(emitterPayload)
 		})
 	}
 
