@@ -68,7 +68,7 @@ function Payment() {
 
 	const handleCreateOrder = async () => {
 		Order.createOrder(orderInfo).then( async res => {
-			activateSelectedPayment(res)
+			await activateSelectedPayment(res)
 			
 			const emitterPayload = { 
 				path: '/pop-up-order', 
