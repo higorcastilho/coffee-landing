@@ -29,15 +29,16 @@ function CheckoutStatus () {
 			const payload = { path: '/update-order-status', body: { success, canceled, orderId }}
 
 			Http.post(payload).then( async () => {
-				const response = await fetch('http://localhost:5000/send-notification', {
+				const response = await fetch('http://localhost:5000/live-data-emitter/v2/update-order-status', {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json; charset=UTF-8'
 					},
-					body: JSON.stringify({ orderId })
+					body: JSON.stringify({ notificationName: 'updateStatus', data: orderId })
 				})
 
 				const data = await response.json()
+				console.log(data)
 			})
 		}
 		getOrderId()
