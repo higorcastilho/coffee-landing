@@ -65,25 +65,33 @@ function Payment() {
 				return true
 		}
 	}
-
-	const handleCreateOrder = async () => {
+	
+	const handleCreateOrder = () => {
 		Order.createOrder(orderInfo).then( async res => {
-			await activateSelectedPayment(res)
-			
-			const emitterPayload = { 
-				path: '/pop-up-order', 
-				body: { 
-					notificationName: 'popUpOrder', 
-					data: {
-						_id: res,
-						email: orderInfo.email,
-						price: orderInfo.price,
-						quantity: orderInfo.quantity,
-						orderStatus: orderInfo.orderStatus
-					} 
+			try {
+				const emitterPayload = { 
+					path: '/pop-up-order', 
+					body: { 
+						notificationName: 'popUpOrder', 
+						data: {
+							_id: res,
+							email: orderInfo.email,
+							price: orderInfo.price,
+							quantity: orderInfo.quantity,
+							orderStatus: orderInfo.orderStatus
+						} 
+					}
 				}
+
+				console.log(emitterPayload)
+
+				const response = await Emitter.post(emitterPayload)
+				const data = await response.json()
+
+				const successPayment = await activateSelectedPayment(res)
+			} catch (error) {
+				console.log(error)
 			}
-			Emitter.post(emitterPayload)
 		})
 	}
 

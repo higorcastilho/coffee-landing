@@ -30,7 +30,8 @@ function CheckoutStatus () {
 
 			Http.post(payload).then( async () => {
 				const emitterPayload = { path: '/update-order-status', body: { notificationName: 'updateStatus', data: orderId }}
-				await Emitter.post(emitterPayload)
+				const response = await Emitter.post(emitterPayload)
+				const data = await response.json()
 			})
 		}
 		getOrderId()
