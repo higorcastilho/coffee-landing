@@ -83,12 +83,10 @@ function Payment() {
 					}
 				}
 
-				console.log(emitterPayload)
-
 				const response = await Emitter.post(emitterPayload)
-				const data = await response.json()
+				await response.json()
 
-				const successPayment = await activateSelectedPayment(res)
+				await activateSelectedPayment(res)
 			} catch (error) {
 				console.log(error)
 			}
@@ -111,7 +109,7 @@ function Payment() {
 	}
 
 	useEffect(() => {
-
+		
 		setOrderInfo( orderInfo => ({...orderInfo, paymentMethod, quantity: quantifier}))
 
 		//styles with a shadow the selected payment method button
