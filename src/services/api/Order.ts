@@ -15,6 +15,7 @@ interface OrderInfoProps {
 class Order {
 	
 	async createOrder (orderInfo: OrderInfoProps) {
+
 		const payload = { path: '/manage-order', body: orderInfo }
 		const response = await Http.post(payload)
 		const data = await response.json()
